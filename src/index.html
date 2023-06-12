@@ -1,0 +1,51 @@
+<form class="left-info-panel" onsubmit="return false;">
+
+
+    <div class="container">
+
+      <h1>Circle Builder</h1>
+      <p><small>Build <a href="https://www.sociocracyforall.org/design-circle-structure/">Sociocracy Circle Diagrams</a>.</small></p>
+      <p>Click on a circle to add <a href="https://www.sociocracyforall.org/organizational-circle-structure-in-sociocracy/#aspects-to-consider">sub-circles</a> or members. Click on a member to <a href="https://www.sociocracyforall.org/organizational-circle-structure-in-sociocracy/#double-linking-and-flow-of-information">link them with another circle</a>.</p>
+
+      <button onclick="download(); ">Download Data
+      </button>
+
+    </div>
+
+
+</form>
+<div id="modform" class="background-modal">
+
+    <form class="modal-content animate" onsubmit="return false;">
+
+        <div class="close-button">
+            <span onclick="document.getElementById('modform').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+        </div>
+
+        <div class="container">
+            <input type="text" id="index" style='display:none'>
+          <label id="member_name"><b>Member Name</b></label>
+          <label id="circle_name"><b>Circle Name</b></label>
+          <input type="text" placeholder="Username" name="username" required id="username" onChange="namechange()">
+
+          <label id="actions"><b>Actions</b></label>
+
+          <button id="addmem" onclick="add_member()">Add Member</button>
+          <button id="addcirc" onclick="add_subcircle()">Add Sub-Circle</button>
+
+          <label id="circles_list_label_1"><b>Circle 1</b></label>
+          <select id="circles_list_1" onchange="circlelist_change(1)">
+          </select>
+
+          <label id="circles_list_label_2"><b>Circle 2</b></label>
+          <select id="circles_list_2" onchange="circlelist_change(2)">
+          </select>
+
+          <button class="delete-button" id="delete_button" onclick="delete_node(); close_modal();">Delete</button>
+
+        </div>
+
+
+    </form>
+</div>
